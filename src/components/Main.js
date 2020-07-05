@@ -116,7 +116,7 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
           <p>Mon bureau est situé au 98, rue Champlain à Salaberry-de-Valleyfield. Il vous est possible de me contacter pour un rendez-vous au 450-807-2449.</p>
           <p>Les modes de paiement sont par transfert Interac ou en argent (montant exact).</p>
-          <form method="post" action="/success" data-netlify="true" name="contact">
+          <form method="post" data-netlify="true" name="contact">
             <div className="field half first">
               <label htmlFor="name">Nom</label>
               <input type="text" name="name" id="name" />
