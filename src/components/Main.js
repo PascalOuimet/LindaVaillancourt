@@ -116,7 +116,7 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
           <p>Mon bureau est situé au 98, rue Champlain à Salaberry-de-Valleyfield. Il vous est possible de me contacter pour un rendez-vous au 450-807-2449.</p>
           <p>Les modes de paiement sont par transfert Interac ou en argent (montant exact).</p>
-          <form method="post" data-netlify="true" name="contact">
+          <form method="post" data-netlify="true" name="contact" action="/success">
             <div className="field half first">
               <label htmlFor="name">Nom</label>
               <input type="text" name="name" id="name" />
@@ -127,7 +127,7 @@ class Main extends React.Component {
             </div>
             <div className="field half">
               <label htmlFor="email">Courriel</label>
-              <input type="text" name="email" id="email" />
+              <input type="email" name="email" id="email" />
             </div>
             <div className="field half">
               <label htmlFor="voicemail">Acceptez-vous que je vous laisse un message sur votre boîte vocale?</label>
@@ -138,7 +138,7 @@ class Main extends React.Component {
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
             <p className="actions">
-              <input type="submit" value="Envoyer" className="special" />
+              <button type="submit" className="special">Envoyer</button>
             </p>
           </form>          
           {close}
