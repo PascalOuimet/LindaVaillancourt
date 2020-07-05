@@ -20,7 +20,7 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-171570104-1",
