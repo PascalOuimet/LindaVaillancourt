@@ -140,6 +140,7 @@ class Main extends React.Component {
             <p className="actions">
               <button type="submit" className="special">Envoyer</button>
             </p>
+            <input type="hidden" name="form-name" value="contact" />
           </form>          
           {close}
         </article>
