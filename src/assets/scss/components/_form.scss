@@ -36,6 +36,10 @@
 						padding: 0 ($gutter * 0.75 * 0.5) 0 0;
 					}
 				}
+
+				&.message {
+					clear: both;					
+				}
 			}
 
 			> .actions {
@@ -152,6 +156,9 @@
 		height:1.5rem;
 		z-index: -1;
 		margin-top:-0.8rem;
+		@include breakpoint(small) {
+			margin-bottom:0.8rem;
+		}
 		margin-left:0;
 
 		& + label {

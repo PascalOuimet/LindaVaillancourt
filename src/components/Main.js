@@ -133,7 +133,7 @@ class Main extends React.Component {
               <label htmlFor="voicemail">Acceptez-vous que je vous laisse un message sur votre boîte vocale?</label>
               <input type="checkbox" name="voicemail" id="voicemail" />
             </div>
-            <div className="field">
+            <div className="field message">
               <label htmlFor="message">Message</label>
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
