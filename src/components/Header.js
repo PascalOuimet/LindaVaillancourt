@@ -12,7 +12,7 @@ const Header = props => (
         <h1>Linda Vaillancourt</h1>
         <h2>Travailleuse sociale</h2>
         <q>
-          "Ce ne sont pas les événement qui perturbent l'homme mais sa façon de les interpréter" - Epictète
+          "Ce ne sont pas les événements qui perturbent l'homme mais sa façon de les interpréter" - Epictète
         </q>
       </div>
     </div>
