@@ -30,7 +30,7 @@ class Main extends React.Component {
         >
           <h2 className="major">Déroulement</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={pic01} alt="Déroulement" />
           </span>
           <p>Nous sommes tous confrontés à différents obstacles de la vie. Il nous arrive que ceux-ci nous paraissent insurmontables et d’autres fois nous avons l’impression que nous y arriverons plus facilement. Dans certains cas, il est nécessaire d’aller chercher de l’aide d’un professionnel.</p>
           <p>Le nombre de rencontres nécessaires peut grandement varier d’un besoin à l’autre. Il n’est donc pas toujours de mise que plusieurs rencontres soient nécessaires.</p>
@@ -55,7 +55,7 @@ class Main extends React.Component {
         >
           <h2 className="major">Services</h2>
           <span className="image main">
-            <img src={pic02} alt="" />
+            <img src={pic02} alt="Services" />
           </span>
           <h3>Les services sont offerts aux adolescents, adultes et personnes âgées.</h3>
           <p>Il m’est possible de vous accompagner dans les contextes suivants :
@@ -96,7 +96,7 @@ class Main extends React.Component {
         >
           <h2 className="major">À propos</h2>
           <span className="image main">
-            <img src={pic03} alt="" />
+            <img src={pic03} alt="Linda Vaillancourt" />
           </span>
           <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 15 ans d’expérience en intervention.</p>
           <p>Mon travail m’a emmené à travailler avec plusieurs clientèles. Entre autres, j’ai de l’expérience avec les enfants, adolescents, adultes et personnes âgées. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je suis actuellement à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
