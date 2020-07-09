@@ -32,8 +32,8 @@ class Main extends React.Component {
           <span className="image main">
             <img src={pic01} alt="Déroulement" />
           </span>
-          <p>Nous sommes tous confrontés à différents obstacles de la vie. Il nous arrive que ceux-ci nous paraissent insurmontables et d’autres fois nous avons l’impression que nous y arriverons plus facilement. Dans certains cas, il est nécessaire d’aller chercher de l’aide d’un professionnel.</p>
-          <p>Le nombre de rencontres nécessaires peut grandement varier d’un besoin à l’autre. Il n’est donc pas toujours de mise que plusieurs rencontres soient nécessaires.</p>
+          <p>Nous sommes tous confrontés à différents obstacles de la vie. Parfois, nous avons l'impression que nous y arriverons facilement, mais à d'autres moments ceux-ci peuvent nous paraître insurmontables. Dans certains cas, il est nécessaire d’aller chercher de l’aide d’un professionnel.</p>
+          <p>Le nombre de rencontres peut grandement varier d’un besoin à l’autre. Il n’est donc pas toujours de mise que plusieurs rencontres soient nécessaires.</p>
           <p>Lors d’un suivi, nous élaborerons ensemble un plan d’intervention. Il ne faut surtout pas oublier que vous êtes le maître de votre propre vie. Il me sera donc possible de vous apporter de l’aide afin que vous puissiez vous fixer des objectifs dont VOUS déciderez. Jamais ces objectifs seront irréalistes ou inatteignables. Le but étant d’améliorer votre mieux-être.</p>
           <p>Les rencontres se déroulent de façon dynamique. De plus, les entrevues peuvent se dérouler en individuel, en couple ou encore avec des membres de la famille. Les rencontres se font généralement à mon bureau ou encore dans votre milieu de vie s’il vous est difficile de vous déplacer. Je vous propose aussi des consultations téléphoniques ou encore par vidéo conférence.</p>
           <p>Lors des suivis psychosociaux, j’utilise quelques approches, mais les deux plus présentes sont les suivantes :
@@ -82,8 +82,8 @@ class Main extends React.Component {
             </ul>
           </p>
           <p>J’offre aussi le service d’évaluation psychosociale (mandat en cas d’inaptitude et ouverture de régime de protection).</p>
-          <p>De plus, un service d’aide au niveau de la gestion des employés en entreprise est disponible. Encore, il m’est possible de me déplacer en entreprise lors de problématiques vécues ou pour un débriefing. Le debriefing est offert en cas de problématique ou encore afin d’améliorer la performance des équipes.</p>
-          <p>Il est à noter, que je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et que j’émets des reçus pour vos assurances.</p>
+          <p>De plus, un service d’aide au niveau de la gestion des employés en entreprise est disponible. Il m’est possible de me déplacer en entreprise lors de problématiques vécues ou pour un debriefing. Le debriefing est offert en cas de problématique ou encore afin d’améliorer la performance des équipes.</p>
+          <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et que j’émets des reçus pour vos assurances.</p>
           {close}
         </article>
 
@@ -99,8 +99,8 @@ class Main extends React.Component {
             <img src={pic03} alt="Linda Vaillancourt" />
           </span>
           <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 15 ans d’expérience en intervention.</p>
-          <p>Mon travail m’a emmené à travailler avec plusieurs clientèles. Entre autres, j’ai de l’expérience avec les enfants, adolescents, adultes et personnes âgées. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je suis actuellement à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
-          <p>Durant ce parcours professionnel, j’ai eu le plaisir de pratiquer en tant que coordonnatrice clinique avec une équipe en CLSC. Durant cette expérience professionnelle, j’ai su m’adapter de façon régulière et mettre à profit mes forces et celles de mon équipe permettant ainsi de grandement diminuer les listes d’attente et d’offrir un meilleur service aux usagers.</p>
+          <p>Mon travail m’a amené à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
+          <p>Durant ce parcours professionnel, j’ai eu le plaisir de pratiquer en tant que coordonnatrice clinique avec une équipe en CLSC. J’ai su m’adapter de façon régulière et mettre à profit mes forces et celles de mon équipe permettant ainsi de grandement diminuer les listes d’attente et d’offrir un meilleur service aux usagers.</p>
           <p>Ma grande soif d’apprendre et ma curiosité intellectuelle font en sorte que je sois très polyvalente et que je vais toujours chercher des formations supplémentaires afin d’améliorer ma pratique.</p>
           <p>Étant une personne chaleureuse, à l’écoute et empathique, je suis disponible pour vous aider à améliorer votre mieux-être et votre cheminement personnel/professionnel.</p>
           {close}
