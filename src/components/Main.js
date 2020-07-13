@@ -42,7 +42,7 @@ class Main extends React.Component {
               <li><strong>Approche cognitivo-comportementale</strong> : Cette approche vous permettra de changer certains comportements pouvant être souffrants pour vous. En travaillant vos pensées, il vous sera possible de changer vos comportements. Ainsi, il vous sera possible de vous ramener plus facilement au « ici et maintenant ». Cette approche est très populaire actuellement afin de diminuer les symptômes anxieux.</li>
             </ul>
           </p>
-          <p>Pour en savoir plus sur le rôle des travailleurs sociaux, consultez le site de l’<a target="_blank" href="https://otstcfq.org">OTSTCFQ</a>.</p>
+          <p>Pour en savoir plus sur le rôle des travailleurs sociaux, consultez le site de l’<a target="_blank" rel="noreferrer" href="https://otstcfq.org">OTSTCFQ</a>.</p>
           {close}
         </article>
 
@@ -142,7 +142,10 @@ class Main extends React.Component {
             </p>
             <input type="hidden" name="subject" value="Pratique autonome" />
             <input type="hidden" name="form-name" value="contact" />
-          </form>          
+          </form>         
+          <ul class="icons">
+            <li><a href="https://www.linkedin.com/in/linda-vaillancourt-343871153" target="_blank" rel="noreferrer" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          </ul> 
           {close}
         </article>
       </div>

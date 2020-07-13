@@ -82,7 +82,12 @@
 					}
 				}
 			}
-		}
+
+			li:before {    
+				content: none;
+				margin:auto;
+			}
+		}		
 
 		&.actions {
 			cursor: default;
