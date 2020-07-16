@@ -7,23 +7,19 @@ import '../assets/scss/main.scss'
 
 const Layout = ({ children, location }) => {
 
-  let content;
-
-  if (location && location.pathname === '/') {
-    content = (
+  const content = location && location.pathname === '/' ? (
       <div>
         {children}
       </div>
     )
-  } else {
-    content = (
+   : 
+    (
       <div id="wrapper" className="page">
         <div>
           {children}
         </div>
       </div>
-    )
-  }
+    )  
 
   return (
     <StaticQuery

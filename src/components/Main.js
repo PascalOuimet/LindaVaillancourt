@@ -25,11 +25,20 @@ query {
 }
 `)
 
-  let close = (
+  const close = (
     <div
+      role="button"
+      aria-label="close"
+      tabIndex={0}
       className="close"
       onClick={() => {
         props.onCloseArticle()
+      }}
+      onKeyDown={(ev) => {
+        console.log(ev.keyCode);
+        if (ev.keyCode === 27) {
+          props.onCloseArticle()
+        }
       }}
     ></div>
   )
@@ -162,8 +171,8 @@ query {
           <input type="hidden" name="subject" value="Pratique autonome" />
           <input type="hidden" name="form-name" value="contact" />
         </form>
-        <ul class="icons">
-          <li><a href="https://www.linkedin.com/in/linda-vaillancourt-343871153" target="_blank" rel="noreferrer" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <ul className="icons">
+          <li><a href="https://www.linkedin.com/in/linda-vaillancourt-343871153" target="_blank" rel="noreferrer" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
         </ul>
         {close}
       </article>
