@@ -35,7 +35,6 @@ query {
         props.onCloseArticle()
       }}
       onKeyDown={(ev) => {
-        console.log(ev.keyCode);
         if (ev.keyCode === 27) {
           props.onCloseArticle()
         }

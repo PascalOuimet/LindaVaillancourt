@@ -9,13 +9,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Linda Vaillancourt - Travailleuse sociale',
+        short_name: 'Linda Vaillancourt',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#1a1f21',
+        theme_color: '#1a1f21',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/icon.png',
       },
     },
     'gatsby-plugin-sass',
@@ -35,6 +35,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images/`,
       },
-    }
+    },
+    `gatsby-plugin-offline`
   ],
 }
