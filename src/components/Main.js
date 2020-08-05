@@ -150,7 +150,7 @@ query {
           </div>
           <div className="field half">
             <label htmlFor="phone">Téléphone</label>
-            <input type="text" name="phone" id="phone" />
+            <input type="tel" name="phone" id="phone" />
           </div>
           <div className="field half">
             <label htmlFor="email">Courriel</label>
