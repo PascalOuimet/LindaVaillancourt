@@ -3,6 +3,7 @@ module.exports = {
     title: 'Linda Vaillancourt - Travailleuse sociale',
     author: 'Pascal Ouimet and Hunter Chang',
     description: 'Site web professionnel de Linda Vaillancourt',
+    siteUrl: 'https://www.lindavaillancourtts.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,7 +19,14 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ['/success']
+      }
+    },
     'gatsby-plugin-sass',
+    `gatsby-plugin-netlify`,
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
