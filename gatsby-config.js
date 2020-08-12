@@ -25,6 +25,16 @@ module.exports = {
         exclude: ['/success']
       }
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Great Vibes',
+          'source sans pro\:300,600'
+        ],
+        display: 'swap'
+      }
+    },
     'gatsby-plugin-sass',
     `gatsby-plugin-netlify`,
     {
