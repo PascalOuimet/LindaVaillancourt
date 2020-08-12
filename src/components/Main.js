@@ -63,12 +63,11 @@ query {
         <p>Le nombre de rencontres peut grandement varier d’un besoin à l’autre. Il n’est donc pas toujours de mise que plusieurs rencontres soient nécessaires.</p>
         <p>Lors d’un suivi, nous élaborerons ensemble un plan d’intervention. Il ne faut surtout pas oublier que vous êtes le maître de votre propre vie. Il me sera donc possible de vous apporter de l’aide afin que vous puissiez vous fixer des objectifs dont VOUS déciderez. Jamais ces objectifs seront irréalistes ou inatteignables. Le but étant d’améliorer votre mieux-être.</p>
         <p>Les rencontres se déroulent de façon dynamique. De plus, les entrevues peuvent se dérouler en individuel, en couple ou encore avec des membres de la famille. Les rencontres se font généralement à mon bureau ou encore dans votre milieu de vie s’il vous est difficile de vous déplacer. Je vous propose aussi des consultations téléphoniques ou encore par vidéo conférence.</p>
-        <p>Lors des suivis psychosociaux, j’utilise quelques approches, mais les deux plus présentes sont les suivantes :
-            <ul>
-            <li><strong>Approche orientée vers les solutions</strong> : Cette approche vous permettra de vous centrer rapidement vers des solutions vous permettant de développer les stratégies dont vous utilisez déjà de façon naturelle. Vos forces seront donc utilisées afin d’évoluer dans votre processus de changement.</li>
-            <li><strong>Approche cognitivo-comportementale</strong> : Cette approche vous permettra de changer certains comportements pouvant être souffrants pour vous. En travaillant vos pensées, il vous sera possible de changer vos comportements. Ainsi, il vous sera possible de vous ramener plus facilement au « ici et maintenant ». Cette approche est très populaire actuellement afin de diminuer les symptômes anxieux.</li>
-          </ul>
-        </p>
+        <p className="ulPrefix">Lors des suivis psychosociaux, j’utilise quelques approches, mais les deux plus présentes sont les suivantes :</p>
+        <ul>
+          <li><strong>Approche orientée vers les solutions</strong> : Cette approche vous permettra de vous centrer rapidement vers des solutions vous permettant de développer les stratégies dont vous utilisez déjà de façon naturelle. Vos forces seront donc utilisées afin d’évoluer dans votre processus de changement.</li>
+          <li><strong>Approche cognitivo-comportementale</strong> : Cette approche vous permettra de changer certains comportements pouvant être souffrants pour vous. En travaillant vos pensées, il vous sera possible de changer vos comportements. Ainsi, il vous sera possible de vous ramener plus facilement au « ici et maintenant ». Cette approche est très populaire actuellement afin de diminuer les symptômes anxieux.</li>
+        </ul>
         <p>Pour en savoir plus sur le rôle des travailleurs sociaux, consultez le site de l’<a target="_blank" rel="noreferrer" href="https://otstcfq.org">OTSTCFQ</a>.</p>
         {close}
       </article>
@@ -85,29 +84,28 @@ query {
           <Img fluid={images.pic02.childImageSharp.fluid} alt="Services" />
         </div>
         <h3>Les services sont offerts aux adolescents, adultes et personnes âgées.</h3>
-        <p>Il m’est possible de vous accompagner dans les contextes suivants :
-            <ul>
-            <li>Difficultés d’adaptation en lien avec la situation de pandémie (COVID-19)</li>
-            <li>Dépression</li>
-            <li>Anxiété</li>
-            <li>Difficultés relationnelles</li>
-            <li>Difficultés conjugales</li>
-            <li>Conflits</li>
-            <li>Problématiques vécues au travail</li>
-            <li>Deuil</li>
-            <li>Difficultés familiales</li>
-            <li>Difficultés vécues avec les enfants (habiletés parentales)</li>
-            <li>Maladie</li>
-            <li>Affirmation de soi</li>
-            <li>Estime de soi</li>
-            <li>Adaptation</li>
-            <li>Gestion des émotions</li>
-            <li>Épuisement</li>
-            <li>Séparation</li>
-            <li>Idées suicidaires</li>
-            <li>Autres</li>
-          </ul>
-        </p>
+        <p className="ulPrefix">Il m’est possible de vous accompagner dans les contextes suivants :</p>
+        <ul>
+          <li>Difficultés d’adaptation en lien avec la situation de pandémie (COVID-19)</li>
+          <li>Dépression</li>
+          <li>Anxiété</li>
+          <li>Difficultés relationnelles</li>
+          <li>Difficultés conjugales</li>
+          <li>Conflits</li>
+          <li>Problématiques vécues au travail</li>
+          <li>Deuil</li>
+          <li>Difficultés familiales</li>
+          <li>Difficultés vécues avec les enfants (habiletés parentales)</li>
+          <li>Maladie</li>
+          <li>Affirmation de soi</li>
+          <li>Estime de soi</li>
+          <li>Adaptation</li>
+          <li>Gestion des émotions</li>
+          <li>Épuisement</li>
+          <li>Séparation</li>
+          <li>Idées suicidaires</li>
+          <li>Autres</li>
+        </ul>
         <p>J’offre aussi le service d’évaluation psychosociale (mandat en cas d’inaptitude et ouverture de régime de protection).</p>
         <p>De plus, un service d’aide au niveau de la gestion des employés en entreprise est disponible. Il m’est possible de me déplacer en entreprise lors de problématiques vécues ou pour un debriefing. Le debriefing est offert en cas de problématique ou encore afin d’améliorer la performance des équipes.</p>
         <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et j’émets des reçus pour vos assurances.</p>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Layout from '../components/layout'
 
 import Header from '../components/Header'
@@ -11,8 +11,7 @@ const IndexPage = props => {
   const [articleTimeout, setArticleTimeout] = useState(false);
   const [article, setArticle] = useState('');
   const [loading, setLoading] = useState('is-loading');
-
-  const wrapperRef = useRef(null);
+  const [wrapperRef, setWrapperRef] = useState(null);
 
   const handleOpenArticle = article => {
     setIsArticleVisible(!isArticleVisible)
@@ -42,7 +41,7 @@ const IndexPage = props => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {      
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target) && event.clientX < document.documentElement.offsetWidth) {
+      if (wrapperRef && !wrapperRef.contains(event.target) && event.clientX < document.documentElement.offsetWidth) {
         if (isArticleVisible) {
           handleCloseArticle()
         }
@@ -74,7 +73,7 @@ const IndexPage = props => {
             articleTimeout={articleTimeout}
             article={article}
             onCloseArticle={handleCloseArticle}
-            setWrapperRef={wrapperRef}
+            setWrapperRef={setWrapperRef}
           />
           <Footer timeout={isTimeout} />
         </div>
