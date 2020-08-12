@@ -54,12 +54,17 @@
         'filter #{_duration(article)} ease-in-out'
       )
     );
+    background-image: url('../../images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     z-index: 1;
   }
 
   .body.is-article-visible & {
     &:after {
       @include vendor('transform', 'scale(1.0825)');
+      // @include vendor('filter', 'blur(0.2rem)');
     }
   }
 
@@ -68,8 +73,4 @@
       background-color: _palette(bg-alt);
     }
   }
-}
-
-#bg * {
-  height: 100vh;
 }
