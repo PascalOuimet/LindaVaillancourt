@@ -105,9 +105,7 @@ query {
           <li>Séparation</li>
           <li>Idées suicidaires</li>
           <li>Autres</li>
-        </ul>
-        <p>J’offre aussi le service d’évaluation psychosociale (mandat en cas d’inaptitude et ouverture de régime de protection).</p>
-        <p>De plus, un service d’aide au niveau de la gestion des employés en entreprise est disponible. Il m’est possible de me déplacer en entreprise lors de problématiques vécues ou pour un debriefing. Le debriefing est offert en cas de problématique ou encore afin d’améliorer la performance des équipes.</p>
+        </ul>                
         <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et j’émets des reçus pour vos assurances.</p>
         {close}
       </article>
