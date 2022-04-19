@@ -21,12 +21,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        excludes: ['/success']
-      }
-    },
-    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [

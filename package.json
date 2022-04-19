@@ -15,7 +15,6 @@
     "gatsby-plugin-react-helmet": "^5.11.0",
     "gatsby-plugin-sass": "^5.11.0",
     "gatsby-plugin-sharp": "^4.12.1",
-    "gatsby-plugin-sitemap": "^5.11.0",
     "gatsby-source-filesystem": "^4.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
     "react": "^18.0.0",
