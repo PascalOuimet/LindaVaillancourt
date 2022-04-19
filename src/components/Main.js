@@ -1,29 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Main = props => {
-  const images = useStaticQuery(graphql`
-  fragment pics on File {
-    childImageSharp {
-      fluid(maxWidth: 747, quality:50) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-query {
-  pic01: file(relativePath: { eq: "pic01.jpg" }) {
-    ...pics
-  }
-  pic02: file(relativePath: { eq: "pic02.jpg" }) {
-    ...pics
-  }
-  pic03: file(relativePath: { eq: "pic03.jpg" }) {
-    ...pics
-  }
-}
-`)
 
   const close = (
     <div
@@ -50,14 +29,13 @@ query {
     >
       <article
         id="intro"
-        className={`${props.article === 'intro' ? 'active' : ''} ${
-          props.articleTimeout ? 'timeout' : ''
+        className={`${props.article === 'intro' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
           }`}
         style={{ display: 'none' }}
       >
         <h2 className="major">Déroulement</h2>
         <div className="image main">
-          <Img fluid={images.pic01.childImageSharp.fluid} alt="Déroulement" />
+          <StaticImage src="../images/pic01.jpg" alt="Déroulement" />
         </div>
         <p>Nous sommes tous confrontés à différents obstacles de la vie. Parfois, nous avons l'impression que nous y arriverons facilement, mais à d'autres moments ceux-ci peuvent nous paraître insurmontables. Dans certains cas, il est nécessaire d’aller chercher de l’aide d’un professionnel.</p>
         <p>Le nombre de rencontres peut grandement varier d’un besoin à l’autre. Il n’est donc pas toujours de mise que plusieurs rencontres soient nécessaires.</p>
@@ -74,14 +52,13 @@ query {
 
       <article
         id="work"
-        className={`${props.article === 'work' ? 'active' : ''} ${
-          props.articleTimeout ? 'timeout' : ''
+        className={`${props.article === 'work' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
           }`}
         style={{ display: 'none' }}
       >
         <h2 className="major">Services</h2>
         <div className="image main">
-          <Img fluid={images.pic02.childImageSharp.fluid} alt="Services" />
+          <StaticImage src="../images/pic02.jpg" alt="Services" />
         </div>
         <h3>Les services sont offerts aux adolescents, adultes et personnes âgées.</h3>
         <p className="ulPrefix">Il m’est possible de vous accompagner dans les contextes suivants :</p>
@@ -105,21 +82,20 @@ query {
           <li>Séparation</li>
           <li>Idées suicidaires</li>
           <li>Autres</li>
-        </ul>                
+        </ul>
         <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et j’émets des reçus pour vos assurances.</p>
         {close}
       </article>
 
       <article
         id="about"
-        className={`${props.article === 'about' ? 'active' : ''} ${
-          props.articleTimeout ? 'timeout' : ''
+        className={`${props.article === 'about' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
           }`}
         style={{ display: 'none' }}
       >
         <h2 className="major">À propos</h2>
         <div className="image main">
-          <Img fluid={images.pic03.childImageSharp.fluid} alt="Linda Vaillancourt" />
+          <StaticImage src="../images/pic03.jpg" alt="Linda Vaillancourt" />
         </div>
         <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 15 ans d’expérience en intervention.</p>
         <p>Mon travail m’a amené à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
@@ -131,8 +107,7 @@ query {
 
       <article
         id="contact"
-        className={`${props.article === 'contact' ? 'active' : ''} ${
-          props.articleTimeout ? 'timeout' : ''
+        className={`${props.article === 'contact' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
           }`}
         style={{ display: 'none' }}
       >
