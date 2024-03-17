@@ -63,7 +63,6 @@ const Main = props => {
         <h3>Les services sont offerts aux adolescents, adultes et personnes âgées.</h3>
         <p className="ulPrefix">Il m’est possible de vous accompagner dans les contextes suivants :</p>
         <ul>
-          <li>Difficultés d’adaptation en lien avec la situation de pandémie (COVID-19)</li>
           <li>Dépression</li>
           <li>Anxiété</li>
           <li>Difficultés relationnelles</li>
@@ -72,7 +71,6 @@ const Main = props => {
           <li>Problématiques vécues au travail</li>
           <li>Deuil</li>
           <li>Difficultés familiales</li>
-          <li>Difficultés vécues avec les enfants (habiletés parentales)</li>
           <li>Maladie</li>
           <li>Affirmation de soi</li>
           <li>Estime de soi</li>
@@ -81,8 +79,10 @@ const Main = props => {
           <li>Épuisement</li>
           <li>Séparation</li>
           <li>Idées suicidaires</li>
+          <li>Évaluation psychosociale dans le cadre de l'homologation d'un mandat de protection</li>
           <li>Autres</li>
         </ul>
+        <p>Il m'est possible de vous offrir des rencontres en personne, par Teams et par Téléphone</p>
         <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et j’émets des reçus pour vos assurances.</p>
         {close}
       </article>
@@ -97,7 +97,7 @@ const Main = props => {
         <div className="image main">
           <StaticImage src="../images/pic03.jpg" alt="Linda Vaillancourt" />
         </div>
-        <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 15 ans d’expérience en intervention.</p>
+        <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 20 ans d’expérience en intervention.</p>
         <p>Mon travail m’a amené à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
         <p>Durant ce parcours professionnel, j’ai eu le plaisir de pratiquer en tant que coordonnatrice clinique avec une équipe en CLSC. J’ai su m’adapter de façon régulière et mettre à profit mes forces et celles de mon équipe permettant ainsi de grandement diminuer les listes d’attente et d’offrir un meilleur service aux usagers.</p>
         <p>Ma grande soif d’apprendre et ma curiosité intellectuelle font en sorte que je sois très polyvalente et que je vais toujours chercher des formations supplémentaires afin d’améliorer ma pratique.</p>
