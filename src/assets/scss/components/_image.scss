@@ -9,86 +9,117 @@
 
 /* Image */
 
-	.image {
+.image {
+	border-radius: functions.size(border-radius);
+	border: 0;
+	display: inline-block;
+	position: relative;
+
+	&:before {
+		@include skel.vendor('pointer-events', 'none');
+		background-image: url('../../images/overlay.png');
+		background-color: functions.palette(bg-overlay);
 		border-radius: functions.size(border-radius);
-		border: 0;
-		display: inline-block;
-		position: relative;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 
-		&:before {
-			@include skel.vendor('pointer-events', 'none');
-			background-image: url('../../images/overlay.png');
-			background-color: functions.palette(bg-overlay);
-			border-radius: functions.size(border-radius);
-			content: '';
-			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0.5;
-			position: absolute;
-			top: 0;
-			width: 100%;
-		}
+	div {
+		z-index: -1;
+	}
 
-		div{
-			z-index: -1;
-		}
+	img {
+		border-radius: functions.size(border-radius);
+		display: block;
+	}
+
+	&.left,
+	&.right {
+		max-width: 40%;
 
 		img {
-			border-radius: functions.size(border-radius);
-			display: block;
-		}
-
-		&.left,
-		&.right {
-			max-width: 40%;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&.left {
-			float: left;
-			padding: 0 1.5em 1em 0;
-			top: 0.25em;
-		}
-
-		&.right {
-			float: right;
-			padding: 0 0 1em 1.5em;
-			top: 0.25em;
-		}
-
-		&.fit {
-			display: block;
-			margin: 0 0 functions.size(element-margin) 0;
 			width: 100%;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&.main {
-			display: block;
-			margin: (functions.size(element-margin) * 1.25) 0;
-			width: 100%;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		@include skel.breakpoint(small) {
-			&.main {
-				margin: (functions.size(element-margin) * 1) 0;
-			}
-		}
-
-		@include skel.breakpoint(xsmall) {
-			&.main {
-				margin: (functions.size(element-margin) * 0.75) 0;
-			}
 		}
 	}
+
+	&.left {
+		float: left;
+		padding: 0 1.5em 1em 0;
+		top: 0.25em;
+	}
+
+	&.right {
+		float: right;
+		padding: 0 0 1em 1.5em;
+		top: 0.25em;
+	}
+
+	&.fit {
+		display: block;
+		margin: 0 0 functions.size(element-margin) 0;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&.main {
+		display: block;
+		margin: (functions.size(element-margin) * 1.25) 0;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	@include skel.breakpoint(small) {
+		&.main {
+			margin: (functions.size(element-margin) * 1) 0;
+		}
+	}
+
+	@include skel.breakpoint(xsmall) {
+		&.main {
+			margin: (functions.size(element-margin) * 0.75) 0;
+		}
+	}
+}
+
+.image.with-fade {
+	position: relative;
+	display: inline-block;
+
+
+	.static-image {
+		display: block;
+	}
+
+	.fade-left,
+	.fade-right {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 45%;
+		/* Adjust the width of the fade effect */
+		pointer-events: none;
+		/* Allows clicks to pass through */
+	}
+
+	.fade-left {
+		left: 0;
+		background: linear-gradient(to right, rgba(27, 31, 34, 0.85), transparent);
+	}
+
+	.fade-right {
+		right: 0;
+		background: linear-gradient(to left, rgba(27, 31, 34, 0.85), transparent);
+	}
+}

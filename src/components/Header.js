@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Header = props =>
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
-      <StaticImage src="../images/Linda.jpg" alt="Linda Vaillancourt" />
+      <StaticImage src="../images/Linda_bw.jpg" alt="Linda Vaillancourt" />
     </div>
     <div className="content">
       <div className="inner">
