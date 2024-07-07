@@ -95,7 +95,7 @@ const Main = props => {
       >
         <h2 className="major">À propos</h2>
         <div className="image main">
-          <StaticImage src="../images/LindaAbout.jpg" alt="Linda Vaillancourt" />
+          <StaticImage src="../images/LindaAbout.jpg" alt="Linda Vaillancourt" quality={100} />
         </div>
         <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 20 ans d’expérience en intervention.</p>
         <p>Mon travail m’a amené à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>

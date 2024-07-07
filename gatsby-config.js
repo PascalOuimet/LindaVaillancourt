@@ -31,16 +31,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-sass',
-    `gatsby-plugin-netlify`,
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: "UA-171570104-1",
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-      }
-    },
+    `gatsby-plugin-netlify`,    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
