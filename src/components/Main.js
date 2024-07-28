@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 
 const Main = props => {
 
-  const handleKeyDown = useCallback(
-    () => ev => ev.key === 'Escape' ? props.onCloseArticle() : null,
-    [props]
-  );
-
   useEffect(() => {
+    const handleKeyDown = ev => ev.key === 'Escape' ? props.onCloseArticle() : null;
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
+  }, [props]);
 
   const close = (
     <div
@@ -20,7 +16,7 @@ const Main = props => {
       aria-label="close"
       tabIndex={0}
       className="close"
-      onKeyDown={handleKeyDown}
+      onKeyDown={props.onCloseArticle}
       onClick={props.onCloseArticle}
     ></div>
   );
@@ -121,15 +117,15 @@ const Main = props => {
         <form method="post" data-netlify="true" name="contact" action="/success">
           <div className="field half first">
             <label htmlFor="name">Nom</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" autoComplete='name' />
           </div>
           <div className="field half">
             <label htmlFor="phone">Téléphone</label>
-            <input type="tel" name="phone" id="phone" />
+            <input type="tel" name="phone" id="phone" autoComplete='tel' />
           </div>
           <div className="field half">
             <label htmlFor="email">Courriel</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" autoComplete='email' />
           </div>
           <div className="field half">
             <label htmlFor="voicemail">Acceptez-vous que je vous laisse un message sur votre boîte vocale?</label>
