@@ -1,54 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
-const Layout = ({ children, location }) => {
-
-  const content = location && location.pathname === '/' ? (
+const Layout = ({ children, location }) =>
+  <>
+    {location && location.pathname === '/' ?
       <div>
         {children}
       </div>
-    )
-   : 
-    (
+      :
       <div id="wrapper" className="page">
         <div>
           {children}
         </div>
       </div>
-    )  
-
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Linda Vaillancourt - Travailleuse sociale' },
-              { name: 'keywords', content: 'travail social, suivi psychosocial, Approche orientée vers les solutions, Approche cognitivo-comportementale' },
-            ]}
-          >
-            <html lang="fr" />
-          </Helmet>
-          {content}
-        </>
-      )}
-    />
-  )
-}
+    }
+  </>
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

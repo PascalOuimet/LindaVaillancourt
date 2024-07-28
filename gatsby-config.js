@@ -5,8 +5,7 @@ module.exports = {
     description: 'Site web professionnel de Linda Vaillancourt',
     siteUrl: 'https://www.lindavaillancourtts.com',
   },
-  plugins: [
-    'gatsby-plugin-react-helmet',
+  plugins: [    
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-manifest`,

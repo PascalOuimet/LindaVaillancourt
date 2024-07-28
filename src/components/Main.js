@@ -1,8 +1,18 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 
 const Main = props => {
+
+  const handleKeyDown = useCallback(
+    () => ev => ev.key === 'Escape' ? props.onCloseArticle() : null,
+    [props]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
 
   const close = (
     <div
@@ -10,27 +20,24 @@ const Main = props => {
       aria-label="close"
       tabIndex={0}
       className="close"
-      onClick={() => {
-        props.onCloseArticle()
-      }}
-      onKeyDown={(ev) => {
-        if (ev.keyCode === 27) {
-          props.onCloseArticle()
-        }
-      }}
+      onKeyDown={handleKeyDown}
+      onClick={props.onCloseArticle}
     ></div>
-  )
+  );
+
+  const timeoutClass = props.articleTimeout ? 'timeout' : ''
+
+  const getArticleClass = article => `${props.article === article ? 'active' : ''} ${timeoutClass}`
 
   return (
     <div
       ref={props.setWrapperRef}
       id="main"
-      style={props.timeout ? { display: 'flex' } : { display: 'none' }}
+      style={{ display: props.timeout ? 'flex' : 'none' }}
     >
       <article
         id="intro"
-        className={`${props.article === 'intro' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
-          }`}
+        className={getArticleClass('intro')}
         style={{ display: 'none' }}
       >
         <h2 className="major">Déroulement</h2>
@@ -52,8 +59,7 @@ const Main = props => {
 
       <article
         id="work"
-        className={`${props.article === 'work' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
-          }`}
+        className={getArticleClass('work')}
         style={{ display: 'none' }}
       >
         <h2 className="major">Services</h2>
@@ -82,15 +88,14 @@ const Main = props => {
           <li>Évaluation psychosociale dans le cadre de l'homologation d'un mandat de protection</li>
           <li>Autres</li>
         </ul>
-        <p>Il m'est possible de vous offrir des rencontres en personne, par Teams et par Téléphone</p>
+        <p>Il m'est possible de vous offrir des rencontres en personne, par Teams et par téléphone</p>
         <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et j’émets des reçus pour vos assurances.</p>
         {close}
       </article>
 
       <article
         id="about"
-        className={`${props.article === 'about' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
-          }`}
+        className={getArticleClass('about')}
         style={{ display: 'none' }}
       >
         <h2 className="major">À propos</h2>
@@ -107,8 +112,7 @@ const Main = props => {
 
       <article
         id="contact"
-        className={`${props.article === 'contact' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''
-          }`}
+        className={getArticleClass('contact')}
         style={{ display: 'none' }}
       >
         <h2 className="major">Contact</h2>

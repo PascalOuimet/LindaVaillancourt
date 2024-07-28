@@ -1,9 +1,31 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import Layout from '../components/layout'
 
+import Layout from '../components/layout'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
+
+import { useStaticQuery, graphql } from 'gatsby'
+
+export const Head = () => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+  return (
+    <>
+      <html lang="fr" />
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content='Linda Vaillancourt - Travailleuse sociale' />
+      <meta name="keywords" content='travail social, suivi psychosocial, Approche orientée vers les solutions, Approche cognitivo-comportementale' />
+    </>
+  )
+};
 
 const IndexPage = props => {
   const [isArticleVisible, setIsArticleVisible] = useState(false);
@@ -17,40 +39,31 @@ const IndexPage = props => {
     setIsArticleVisible(!isArticleVisible)
     setArticle(article)
 
-    setTimeout(() => {
-      setIsTimeout(!isTimeout)
-    }, 325)
-
-    setTimeout(() => {
-      setArticleTimeout(!articleTimeout)
-    }, 350)
+    setTimeout(() => setIsTimeout(!isTimeout), 325)
+    setTimeout(() => setArticleTimeout(!articleTimeout), 350)
   }
 
   const handleCloseArticle = useCallback(() => {
-    setArticleTimeout(!articleTimeout)
+    if (isArticleVisible) {
+      setArticleTimeout(!articleTimeout)
 
-    setTimeout(() => {
-      setIsTimeout(!isTimeout)
-    }, 325)
+      setTimeout(() => setIsTimeout(!isTimeout), 325)
 
-    setTimeout(() => {
-      setIsArticleVisible(!isArticleVisible)
-      setArticle('')
-    }, 350)
+      setTimeout(() => {
+        setIsArticleVisible(false)
+        setArticle('')
+      }, 350)
+    }
   }, [articleTimeout, isArticleVisible, isTimeout])
 
   useEffect(() => {
-    const handleClickOutside = (event) => {      
+    const handleClickOutside = event => {
       if (wrapperRef && !wrapperRef.contains(event.target) && event.clientX < document.documentElement.offsetWidth) {
-        if (isArticleVisible) {
-          handleCloseArticle()
-        }
+        handleCloseArticle()
       }
     }
 
-    const timeoutId = setTimeout(() => {
-      setLoading('');
-    }, 100);
+    const timeoutId = setTimeout(() => setLoading(''), 100);
 
     document.addEventListener('mousedown', handleClickOutside);
 
@@ -60,7 +73,7 @@ const IndexPage = props => {
       }
       document.removeEventListener('mousedown', handleClickOutside);
     }
-  }, [wrapperRef, isArticleVisible, handleCloseArticle]);  
+  }, [wrapperRef, isArticleVisible, handleCloseArticle]);
 
   return (
     <Layout location={props.location}>
