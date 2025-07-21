@@ -112,7 +112,7 @@ const Main = props => {
         style={{ display: 'none' }}
       >
         <h2 className="major">Contact</h2>
-        <p>Mon bureau est situé au 39, rue Jacques-Cartier à Salaberry-de-Valleyfield. Il vous est possible de me contacter pour un rendez-vous au 450-807-2449.</p>
+        <p>Il vous est possible de me contacter pour un rendez-vous au 450-807-2449.</p>
         <p>Les modes de paiement sont par transfert Interac ou en argent (montant exact).</p>
         <form method="post" data-netlify="true" name="contact" action="/success">
           <div className="field half first">
