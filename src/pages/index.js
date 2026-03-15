@@ -75,6 +75,28 @@ const IndexPage = props => {
     }
   }, [wrapperRef, isArticleVisible, handleCloseArticle]);
 
+  useEffect(() => {
+    let openTimeoutId = null
+    let openArticleTimeoutId = null
+
+    const openWelcomeModalId = setTimeout(() => {
+      setIsArticleVisible(true)
+      setArticle('availability')
+      openTimeoutId = setTimeout(() => setIsTimeout(true), 325)
+      openArticleTimeoutId = setTimeout(() => setArticleTimeout(true), 350)
+    }, 450)
+
+    return () => {
+      clearTimeout(openWelcomeModalId)
+      if (openTimeoutId) {
+        clearTimeout(openTimeoutId)
+      }
+      if (openArticleTimeoutId) {
+        clearTimeout(openArticleTimeoutId)
+      }
+    }
+  }, [])
+
   return (
     <Layout location={props.location}>
       <div className={`body ${loading} ${isArticleVisible ? 'is-article-visible' : ''}`}>
