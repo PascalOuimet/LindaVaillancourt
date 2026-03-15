@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { StaticImage } from "gatsby-plugin-image"
-import disponibilitesRapidesImage from '../images/disponibilites-rapides.jpg'
 
 const Main = props => {
 
@@ -96,9 +95,6 @@ const Main = props => {
         style={{ display: 'none' }}
       >
         <h2 className="major">Disponibilit&eacute;s rapides &ndash; &Eacute;valuations psychosociales</h2>
-        <div className="image main">
-          <img src={disponibilitesRapidesImage} alt="Linda Vaillancourt a gauche en echange empathique avec une personne agee lors d'une evaluation psychosociale" />
-        </div>
         <p>Nous sommes actuellement en mesure d&rsquo;offrir rapidement des services d&rsquo;&eacute;valuation psychosociale pour les d&eacute;marches d&rsquo;homologation d&rsquo;un mandat de protection ou d&rsquo;ouverture de tutelle au majeur.</p>
         <p>Un accompagnement professionnel, humain et rigoureux, afin de soutenir les personnes et leurs proches dans ces d&eacute;marches importantes.</p>
         {close}
