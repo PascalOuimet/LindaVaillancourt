@@ -141,25 +141,26 @@
 				}
 
 				&#availability {
-					@include mixins.padding(1.35rem, 1.15rem, (1rem, 0, 0.35rem, 0));
+					@include mixins.padding(1.35rem, 1.15rem, (1rem, 0, 1rem, 0));
+					margin-top: -0.75rem;
 
 					.major {
 						max-width: calc(100% - 2.5rem);
-						font-size: 0.96rem;
-						line-height: 1.2;
+						font-size: 1.03rem;
+						line-height: 1.24;
 						letter-spacing: 0.06rem;
-						margin-bottom: 0.55rem;
+						margin-bottom: 0.7rem;
 						padding-bottom: 0.35rem;
 					}
 
 					.image.main {
-						margin: 0 0 0.55rem 0;
+						margin: 0 0 0.7rem 0;
 					}
 
 					p {
-						font-size: 0.8rem;
-						line-height: 1.3;
-						margin-bottom: 0.42rem;
+						font-size: 0.9rem;
+						line-height: 1.36;
+						margin-bottom: 0.5rem;
 					}
 				}
 			}
@@ -170,24 +171,25 @@
 				@include mixins.padding(2rem, 1.5rem, (1rem, 0, 0.5rem, 0));
 
 				&#availability {
-					@include mixins.padding(1.15rem, 0.95rem, (0.8rem, 0, 0.3rem, 0));
+					@include mixins.padding(1.15rem, 0.95rem, (0.9rem, 0, 1.05rem, 0));
+					margin-top: -0.85rem;
 
 					.major {
 						max-width: calc(100% - 2.25rem);
-						font-size: 0.88rem;
-						line-height: 1.18;
+						font-size: 0.96rem;
+						line-height: 1.22;
 						letter-spacing: 0.04rem;
-						margin-bottom: 0.45rem;
+						margin-bottom: 0.6rem;
 					}
 
 					.image.main {
-						margin: 0 0 0.45rem 0;
+						margin: 0 0 0.6rem 0;
 					}
 
 					p {
-						font-size: 0.75rem;
-						line-height: 1.26;
-						margin-bottom: 0.35rem;
+						font-size: 0.86rem;
+						line-height: 1.33;
+						margin-bottom: 0.45rem;
 					}
 				}
 			}
