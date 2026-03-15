@@ -84,7 +84,7 @@ const IndexPage = props => {
       setArticle('availability')
       openTimeoutId = setTimeout(() => setIsTimeout(true), 325)
       openArticleTimeoutId = setTimeout(() => setArticleTimeout(true), 350)
-    }, 450)
+    }, 1500)
 
     return () => {
       clearTimeout(openWelcomeModalId)
