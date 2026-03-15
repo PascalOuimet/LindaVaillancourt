@@ -13,27 +13,65 @@ export const Head = () => {
       site {
         siteMetadata {
           title
+          siteUrl
         }
       }
     }
-  `);
+  `)
+
+  const title = data.site.siteMetadata.title
+  const siteUrl = data.site.siteMetadata.siteUrl
+  const canonicalUrl = `${siteUrl}/`
+  const description = "Travailleuse sociale a Salaberry-de-Valleyfield offrant suivi psychosocial et evaluations psychosociales pour homologation d'un mandat de protection ou ouverture de tutelle."
+  const ogImage = `${siteUrl}/icon_color.png`
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Linda Vaillancourt - Travailleuse sociale',
+    url: siteUrl,
+    description,
+    telephone: '+1-450-807-2449',
+    image: ogImage,
+    areaServed: 'Salaberry-de-Valleyfield, Quebec, Canada',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '63, rue Saint-Jean-Baptiste bureau #203',
+      addressLocality: 'Salaberry-de-Valleyfield',
+      addressRegion: 'QC',
+      addressCountry: 'CA',
+    },
+  }
+
   return (
     <>
       <html lang="fr" />
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content='Linda Vaillancourt - Travailleuse sociale' />
-      <meta name="keywords" content='travail social, suivi psychosocial, Approche orientée vers les solutions, Approche cognitivo-comportementale' />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content="index,follow" />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="fr_CA" />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={ogImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </>
   )
-};
+}
 
 const IndexPage = props => {
-  const [isArticleVisible, setIsArticleVisible] = useState(false);
-  const [isTimeout, setIsTimeout] = useState(false);
-  const [articleTimeout, setArticleTimeout] = useState(false);
-  const [article, setArticle] = useState('');
-  const [loading, setLoading] = useState('is-loading');
-  const [wrapperRef, setWrapperRef] = useState(null);
+  const [isArticleVisible, setIsArticleVisible] = useState(false)
+  const [isTimeout, setIsTimeout] = useState(false)
+  const [articleTimeout, setArticleTimeout] = useState(false)
+  const [article, setArticle] = useState('')
+  const [loading, setLoading] = useState('is-loading')
+  const [wrapperRef, setWrapperRef] = useState(null)
 
   const handleOpenArticle = article => {
     setIsArticleVisible(!isArticleVisible)
@@ -63,17 +101,17 @@ const IndexPage = props => {
       }
     }
 
-    const timeoutId = setTimeout(() => setLoading(''), 100);
+    const timeoutId = setTimeout(() => setLoading(''), 100)
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
       if (timeoutId) {
-        clearTimeout(timeoutId);
+        clearTimeout(timeoutId)
       }
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [wrapperRef, isArticleVisible, handleCloseArticle]);
+  }, [wrapperRef, isArticleVisible, handleCloseArticle])
 
   useEffect(() => {
     let openTimeoutId = null

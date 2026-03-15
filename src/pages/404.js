@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 
 import { useStaticQuery, graphql } from 'gatsby'
 
-const errorMessage = 'Page introuvable';
+const errorMessage = 'Page introuvable'
 
 export const Head = () => {
   const data = useStaticQuery(graphql`
@@ -11,17 +11,24 @@ export const Head = () => {
       site {
         siteMetadata {
           title
+          siteUrl
         }
       }
     }
-  `);
+  `)
+
+  const title = `${data.site.siteMetadata.title} - ${errorMessage}`
+  const canonicalUrl = `${data.site.siteMetadata.siteUrl}/404/`
+
   return (
     <>
       <html lang="fr" />
-      <title>{data.site.siteMetadata.title} - {errorMessage}</title>
+      <title>{title}</title>
+      <meta name="robots" content="noindex,nofollow" />
+      <link rel="canonical" href={canonicalUrl} />
     </>
   )
-};
+}
 
 const NotFoundPage = () => (
   <Layout>

@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
-import { useStaticQuery, graphql } from 'gatsby'
-
-const successMessage = "J'ai bien reçu votre message";
+const successMessage = "J'ai bien recu votre message"
 
 export const Head = () => {
   const data = useStaticQuery(graphql`
@@ -13,24 +11,30 @@ export const Head = () => {
       site {
         siteMetadata {
           title
+          siteUrl
         }
       }
     }
-  `);
+  `)
+
+  const title = `${data.site.siteMetadata.title} - ${successMessage}`
+  const canonicalUrl = `${data.site.siteMetadata.siteUrl}/success/`
+
   return (
     <>
       <html lang="fr" />
-      <title>{data.site.siteMetadata.title} - {successMessage}</title>
+      <title>{title}</title>
+      <meta name="robots" content="noindex,nofollow" />
+      <link rel="canonical" href={canonicalUrl} />
     </>
   )
-};
+}
 
 const Success = () => (
   <Layout>
     <p>{successMessage}.<br />Je vous contacterai d'ici peu.</p>
-    <Link to="/">Retour à la page d'accueil</Link>
+    <Link to="/">Retour a la page d'accueil</Link>
   </Layout>
 )
 
 export default Success
-
