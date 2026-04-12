@@ -24,7 +24,7 @@ export const Head = () => {
   const canonicalUrl = `${siteUrl}/`
   const description =
     "Travailleuse sociale à Salaberry-de-Valleyfield offrant suivi psychosocial et évaluations psychosociales pour homologation d'un mandat de protection ou ouverture de tutelle."
-  const ogImage = `${siteUrl}/icon_color.png`
+  const ogImage = `${siteUrl}/og-image.jpg`
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -57,6 +57,9 @@ export const Head = () => {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Linda Vaillancourt, travailleuse sociale" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
