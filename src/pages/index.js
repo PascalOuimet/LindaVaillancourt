@@ -22,7 +22,8 @@ export const Head = () => {
   const title = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const canonicalUrl = `${siteUrl}/`
-  const description = "Travailleuse sociale a Salaberry-de-Valleyfield offrant suivi psychosocial et evaluations psychosociales pour homologation d'un mandat de protection ou ouverture de tutelle."
+  const description =
+    "Travailleuse sociale à Salaberry-de-Valleyfield offrant suivi psychosocial et évaluations psychosociales pour homologation d'un mandat de protection ou ouverture de tutelle."
   const ogImage = `${siteUrl}/icon_color.png`
   const structuredData = {
     '@context': 'https://schema.org',
@@ -153,10 +154,7 @@ const IndexPage = props => {
           <Footer timeout={isTimeout} />
         </div>
         {showAvailabilityNotice && !isArticleVisible && (
-          <aside
-            className="availability-notice"
-            aria-label="Notification de disponibilités rapides"
-          >
+          <aside className="availability-notice" aria-label="Notification de disponibilités rapides">
             <button
               type="button"
               className="availability-notice-close"
@@ -167,8 +165,8 @@ const IndexPage = props => {
             </button>
             <p className="availability-notice-eyebrow">Disponibilités rapides</p>
             <p className="availability-notice-text">
-              Évaluations psychosociales disponibles rapidement pour l’homologation d’un mandat de protection
-              ou l’ouverture de tutelle au majeur.
+              Évaluations psychosociales disponibles rapidement pour l’homologation d’un mandat de protection ou
+              l’ouverture de tutelle au majeur.
             </p>
           </aside>
         )}

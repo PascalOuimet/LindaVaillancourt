@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Header = props =>
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -12,37 +12,29 @@ const Header = props =>
         <h1>Linda Vaillancourt</h1>
         <h2>Travailleuse sociale</h2>
         <q>
-          "Ce ne sont pas les événements qui perturbent l'homme mais sa façon de les interpréter" - Epictète
+          "Ce ne sont pas les événements qui perturbent l'homme mais sa façon de les interpréter" - Épictète
         </q>
       </div>
     </div>
     <nav>
       <ul>
         <li>
-          <button
-            onClick={() => props.onOpenArticle('intro')}
-          >
+          <button onClick={() => props.onOpenArticle('intro')}>
             Déroulement
           </button>
         </li>
         <li>
-          <button
-            onClick={() => props.onOpenArticle('work')}
-          >
+          <button onClick={() => props.onOpenArticle('work')}>
             Services
           </button>
         </li>
         <li>
-          <button
-            onClick={() => props.onOpenArticle('about')}
-          >
+          <button onClick={() => props.onOpenArticle('about')}>
             À propos
           </button>
         </li>
         <li>
-          <button
-            onClick={() => props.onOpenArticle('contact')}
-          >
+          <button onClick={() => props.onOpenArticle('contact')}>
             Contact
           </button>
         </li>

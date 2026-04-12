@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Main = props => {
   const [showJunePriceNotice, setShowJunePriceNotice] = useState(false)
 
   useEffect(() => {
-    const handleKeyDown = ev => ev.key === 'Escape' ? props.onCloseArticle() : null;
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [props]);
+    const handleKeyDown = ev => ev.key === 'Escape' ? props.onCloseArticle() : null
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [props])
 
   useEffect(() => {
-    setShowJunePriceNotice(new Date() < new Date(2026, 5, 1));
-  }, []);
+    setShowJunePriceNotice(new Date() < new Date(2026, 5, 1))
+  }, [])
 
   const close = (
     <div
@@ -24,7 +24,7 @@ const Main = props => {
       onKeyDown={props.onCloseArticle}
       onClick={props.onCloseArticle}
     ></div>
-  );
+  )
 
   const timeoutClass = props.articleTimeout ? 'timeout' : ''
 
@@ -48,7 +48,7 @@ const Main = props => {
         <p>Nous sommes tous confrontés à différents obstacles de la vie. Parfois, nous avons l'impression que nous y arriverons facilement, mais à d'autres moments ceux-ci peuvent nous paraître insurmontables. Dans certains cas, il est nécessaire d’aller chercher de l’aide d’un professionnel.</p>
         <p>Le nombre de rencontres peut grandement varier d’un besoin à l’autre. Il n’est donc pas toujours de mise que plusieurs rencontres soient nécessaires.</p>
         <p>Lors d’un suivi, nous élaborerons ensemble un plan d’intervention. Il ne faut surtout pas oublier que vous êtes le maître de votre propre vie. Il me sera donc possible de vous apporter de l’aide afin que vous puissiez vous fixer des objectifs dont VOUS déciderez. Jamais ces objectifs seront irréalistes ou inatteignables. Le but étant d’améliorer votre mieux-être.</p>
-        <p>Les rencontres se déroulent de façon dynamique. De plus, les entrevues peuvent se dérouler en individuel, en couple ou encore avec des membres de la famille. Les rencontres se font généralement à mon bureau ou encore dans votre milieu de vie s’il vous est difficile de vous déplacer. Je vous propose aussi des consultations téléphoniques ou encore par vidéo conférence.</p>
+        <p>Les rencontres se déroulent de façon dynamique. De plus, les entrevues peuvent se dérouler en individuel, en couple ou encore avec des membres de la famille. Les rencontres se font généralement à mon bureau ou encore dans votre milieu de vie s’il vous est difficile de vous déplacer. Je vous propose aussi des consultations téléphoniques ou encore par vidéoconférence.</p>
         <p className="ulPrefix">Lors des suivis psychosociaux, j’utilise plusieurs approches.</p>
         <ul>
           <li><strong>Approche orientée vers les solutions</strong> : Cette approche vous permettra de vous centrer rapidement vers des solutions vous permettant de développer les stratégies dont vous utilisez déjà de façon naturelle. Vos forces seront donc utilisées afin d’évoluer dans votre processus de changement.</li>
@@ -89,7 +89,7 @@ const Main = props => {
           <li>Évaluation psychosociale dans le cadre de l'homologation d'un mandat de protection</li>
           <li>Autres</li>
         </ul>
-        <p>Il m'est possible de vous offrir des rencontres en personne, par Teams et par téléphone</p>
+        <p>Il m'est possible de vous offrir des rencontres en personne, par Teams et par téléphone.</p>
         <p>Je suis aussi affiliée avec plusieurs PAE (programmes d’aide aux employés) et j’émets des reçus pour vos assurances.</p>
         {close}
       </article>
@@ -99,11 +99,11 @@ const Main = props => {
         className={getArticleClass('availability')}
         style={{ display: 'none' }}
       >
-        <h2 className="major">Disponibilit&eacute;s rapides &ndash; &Eacute;valuations psychosociales</h2>
-        <p>Nous sommes actuellement en mesure d&rsquo;offrir rapidement des services d&rsquo;&eacute;valuation psychosociale pour les d&eacute;marches d&rsquo;homologation d&rsquo;un mandat de protection ou d&rsquo;ouverture de tutelle au majeur.</p>
-        <p>Un accompagnement professionnel, humain et rigoureux, afin de soutenir les personnes et leurs proches dans ces d&eacute;marches importantes.</p>
+        <h2 className="major">Disponibilités rapides – Évaluations psychosociales</h2>
+        <p>Nous sommes actuellement en mesure d’offrir rapidement des services d’évaluation psychosociale pour les démarches d’homologation d’un mandat de protection ou d’ouverture de tutelle au majeur.</p>
+        <p>Un accompagnement professionnel, humain et rigoureux, afin de soutenir les personnes et leurs proches dans ces démarches importantes.</p>
         {showJunePriceNotice && (
-          <p><strong>Veuillez noter que les &eacute;valuations seront au co&ucirc;t de 1500$ plus taxes d&egrave;s le 1er juin 2026.</strong></p>
+          <p><strong>Veuillez noter que les évaluations seront au coût de 1500$ plus taxes dès le 1er juin 2026.</strong></p>
         )}
         {close}
       </article>
@@ -118,7 +118,7 @@ const Main = props => {
           <StaticImage src="../images/LindaAbout.jpg" alt="Linda Vaillancourt" quality={100} />
         </div>
         <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 20 ans d’expérience en intervention.</p>
-        <p>Mon travail m’a amené à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
+        <p>Mon travail m’a amenée à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
         <p>Durant ce parcours professionnel, j’ai eu le plaisir de pratiquer en tant que coordonnatrice clinique avec une équipe en CLSC. J’ai su m’adapter de façon régulière et mettre à profit mes forces et celles de mon équipe permettant ainsi de grandement diminuer les listes d’attente et d’offrir un meilleur service aux usagers.</p>
         <p>Ma grande soif d’apprendre et ma curiosité intellectuelle font en sorte que je sois très polyvalente et que je vais toujours chercher des formations supplémentaires afin d’améliorer ma pratique.</p>
         <p>Étant une personne chaleureuse, à l’écoute et empathique, je suis disponible pour vous aider à améliorer votre mieux-être et votre cheminement personnel/professionnel.</p>
@@ -136,15 +136,15 @@ const Main = props => {
         <form method="post" data-netlify="true" name="contact" action="/success">
           <div className="field half first">
             <label htmlFor="name">Nom</label>
-            <input type="text" name="name" id="name" autoComplete='name' />
+            <input type="text" name="name" id="name" autoComplete="name" />
           </div>
           <div className="field half">
             <label htmlFor="phone">Téléphone</label>
-            <input type="tel" name="phone" id="phone" autoComplete='tel' />
+            <input type="tel" name="phone" id="phone" autoComplete="tel" />
           </div>
           <div className="field half">
             <label htmlFor="email">Courriel</label>
-            <input type="email" name="email" id="email" autoComplete='email' />
+            <input type="email" name="email" id="email" autoComplete="email" />
           </div>
           <div className="field half">
             <label htmlFor="voicemail">Acceptez-vous que je vous laisse un message sur votre boîte vocale?</label>
