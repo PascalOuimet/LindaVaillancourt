@@ -72,6 +72,7 @@ const IndexPage = props => {
   const [article, setArticle] = useState('')
   const [loading, setLoading] = useState('is-loading')
   const [wrapperRef, setWrapperRef] = useState(null)
+  const [showAvailabilityNotice, setShowAvailabilityNotice] = useState(false)
 
   const handleOpenArticle = article => {
     setIsArticleVisible(!isArticleVisible)
@@ -114,26 +115,27 @@ const IndexPage = props => {
   }, [wrapperRef, isArticleVisible, handleCloseArticle])
 
   useEffect(() => {
-    let openTimeoutId = null
-    let openArticleTimeoutId = null
-
-    const openWelcomeModalId = setTimeout(() => {
-      setIsArticleVisible(true)
-      setArticle('availability')
-      openTimeoutId = setTimeout(() => setIsTimeout(true), 325)
-      openArticleTimeoutId = setTimeout(() => setArticleTimeout(true), 350)
-    }, 1500)
-
-    return () => {
-      clearTimeout(openWelcomeModalId)
-      if (openTimeoutId) {
-        clearTimeout(openTimeoutId)
-      }
-      if (openArticleTimeoutId) {
-        clearTimeout(openArticleTimeoutId)
-      }
+    if (typeof window === 'undefined') {
+      return undefined
     }
+
+    const noticeDismissed = window.localStorage.getItem('availability-notice-dismissed')
+
+    if (!noticeDismissed) {
+      const noticeTimeoutId = setTimeout(() => setShowAvailabilityNotice(true), 1200)
+      return () => clearTimeout(noticeTimeoutId)
+    }
+
+    return undefined
   }, [])
+
+  const handleCloseAvailabilityNotice = () => {
+    setShowAvailabilityNotice(false)
+
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('availability-notice-dismissed', 'true')
+    }
+  }
 
   return (
     <Layout location={props.location}>
@@ -150,6 +152,26 @@ const IndexPage = props => {
           />
           <Footer timeout={isTimeout} />
         </div>
+        {showAvailabilityNotice && !isArticleVisible && (
+          <aside
+            className="availability-notice"
+            aria-label="Notification de disponibilités rapides"
+          >
+            <button
+              type="button"
+              className="availability-notice-close"
+              aria-label="Fermer la notification"
+              onClick={handleCloseAvailabilityNotice}
+            >
+              ×
+            </button>
+            <p className="availability-notice-eyebrow">Disponibilités rapides</p>
+            <p className="availability-notice-text">
+              Évaluations psychosociales disponibles rapidement pour l’homologation d’un mandat de protection
+              ou l’ouverture de tutelle au majeur.
+            </p>
+          </aside>
+        )}
         <div id="bg"></div>
       </div>
     </Layout>

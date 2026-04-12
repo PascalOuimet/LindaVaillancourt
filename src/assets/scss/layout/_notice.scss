@@ -1,0 +1,75 @@
+@use "sass:color";
+@use "../libs/functions";
+@use "../libs/skel";
+
+/* Availability Notice */
+
+.availability-notice {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: min(28rem, calc(100vw - 2rem));
+  padding: 1.1rem 3.25rem 1.1rem 1.25rem;
+  border: solid functions.size(border-width) functions.palette(border);
+  border-radius: functions.size(border-radius);
+  background-color: color.adjust(functions.palette(bg), $alpha: -0.08);
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+  z-index: 12;
+}
+
+.availability-notice-eyebrow {
+  margin: 0 0 0.45rem 0;
+  font-size: 0.72rem;
+  font-weight: functions.font(weight-bold);
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: functions.palette(fg-light);
+}
+
+.availability-notice-text {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.availability-notice-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+  color: functions.palette(fg-light);
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.availability-notice-close:hover,
+.availability-notice-close:focus {
+  background: functions.palette(border-bg);
+  color: functions.palette(fg);
+}
+
+.availability-notice-close:active {
+  background: functions.palette(border-bg-alt);
+}
+
+@include skel.breakpoint(small) {
+  .availability-notice {
+    right: 1rem;
+    bottom: 1rem;
+    width: calc(100vw - 2rem);
+    padding: 1rem 2.9rem 1rem 1rem;
+  }
+
+  .availability-notice-text {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+}

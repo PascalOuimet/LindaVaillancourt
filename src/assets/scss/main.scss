@@ -46,4 +46,5 @@
 	@include meta.load-css('layout/wrapper');
 	@include meta.load-css('layout/header');
 	@include meta.load-css('layout/main');
+	@include meta.load-css('layout/notice');
 	@include meta.load-css('layout/footer');
