@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 
 const Main = props => {
+  const [showJunePriceNotice, setShowJunePriceNotice] = useState(false)
 
   useEffect(() => {
     const handleKeyDown = ev => ev.key === 'Escape' ? props.onCloseArticle() : null;
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [props]);
+
+  useEffect(() => {
+    setShowJunePriceNotice(new Date() < new Date(2026, 5, 1));
+  }, []);
 
   const close = (
     <div
@@ -97,7 +102,9 @@ const Main = props => {
         <h2 className="major">Disponibilit&eacute;s rapides &ndash; &Eacute;valuations psychosociales</h2>
         <p>Nous sommes actuellement en mesure d&rsquo;offrir rapidement des services d&rsquo;&eacute;valuation psychosociale pour les d&eacute;marches d&rsquo;homologation d&rsquo;un mandat de protection ou d&rsquo;ouverture de tutelle au majeur.</p>
         <p>Un accompagnement professionnel, humain et rigoureux, afin de soutenir les personnes et leurs proches dans ces d&eacute;marches importantes.</p>
-        <p><strong>Veuillez noter que les &eacute;valuations seront au co&ucirc;t de 1500$ plus taxes d&egrave;s le 1er juin 2026.</strong></p>
+        {showJunePriceNotice && (
+          <p><strong>Veuillez noter que les &eacute;valuations seront au co&ucirc;t de 1500$ plus taxes d&egrave;s le 1er juin 2026.</strong></p>
+        )}
         {close}
       </article>
 
