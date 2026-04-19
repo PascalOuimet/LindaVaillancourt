@@ -89,17 +89,6 @@ const Main = props => {
       </article>
 
       <article
-        id="availability"
-        className={getArticleClass('availability')}
-        style={{ display: 'none' }}
-      >
-        <h2 className="major">Disponibilités rapides – Évaluations psychosociales</h2>
-        <p>Nous sommes actuellement en mesure d’offrir rapidement des services d’évaluation psychosociale pour les démarches d’homologation d’un mandat de protection ou d’ouverture de tutelle au majeur.</p>
-        <p>Un accompagnement professionnel, humain et rigoureux, afin de soutenir les personnes et leurs proches dans ces démarches importantes.</p>
-        {close}
-      </article>
-
-      <article
         id="about"
         className={getArticleClass('about')}
         style={{ display: 'none' }}
