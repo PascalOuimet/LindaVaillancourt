@@ -77,7 +77,6 @@ const IndexPage = props => {
   const [loading, setLoading] = useState('is-loading')
   const [wrapperRef, setWrapperRef] = useState(null)
   const [showAvailabilityNotice, setShowAvailabilityNotice] = useState(false)
-  const [showJunePriceNotice, setShowJunePriceNotice] = useState(false)
 
   const handleOpenArticle = article => {
     setIsArticleVisible(!isArticleVisible)
@@ -134,10 +133,6 @@ const IndexPage = props => {
     return undefined
   }, [])
 
-  useEffect(() => {
-    setShowJunePriceNotice(new Date() < new Date(2026, 5, 1))
-  }, [])
-
   const handleCloseAvailabilityNotice = () => {
     setShowAvailabilityNotice(false)
 
@@ -176,11 +171,6 @@ const IndexPage = props => {
               Évaluations psychosociales disponibles rapidement pour l’homologation d’un mandat de protection ou
               l’ouverture de tutelle au majeur.
             </p>
-            {showJunePriceNotice && (
-              <p className="availability-notice-text">
-                <strong>Veuillez noter que les évaluations seront au coût de 1500$ plus taxes dès le 1er juin 2026.</strong>
-              </p>
-            )}
           </aside>
         )}
         <div id="bg"></div>
