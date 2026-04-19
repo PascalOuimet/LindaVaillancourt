@@ -1,19 +1,13 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Main = props => {
-  const [showJunePriceNotice, setShowJunePriceNotice] = useState(false)
-
   useEffect(() => {
     const handleKeyDown = ev => ev.key === 'Escape' ? props.onCloseArticle() : null
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [props])
-
-  useEffect(() => {
-    setShowJunePriceNotice(new Date() < new Date(2026, 5, 1))
-  }, [])
 
   const close = (
     <div
@@ -102,9 +96,6 @@ const Main = props => {
         <h2 className="major">Disponibilités rapides – Évaluations psychosociales</h2>
         <p>Nous sommes actuellement en mesure d’offrir rapidement des services d’évaluation psychosociale pour les démarches d’homologation d’un mandat de protection ou d’ouverture de tutelle au majeur.</p>
         <p>Un accompagnement professionnel, humain et rigoureux, afin de soutenir les personnes et leurs proches dans ces démarches importantes.</p>
-        {showJunePriceNotice && (
-          <p><strong>Veuillez noter que les évaluations seront au coût de 1500$ plus taxes dès le 1er juin 2026.</strong></p>
-        )}
         {close}
       </article>
 
