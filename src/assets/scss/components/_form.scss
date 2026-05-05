@@ -260,7 +260,7 @@
 	}
 
 	.privacy-policy-note {
-		margin: 0.35rem 0 0;
+		margin: 1.5rem 0 0;
 		text-align: right;
 	}
 
@@ -272,14 +272,13 @@
 		cursor: pointer;
 		display: inline-block;
 		font: inherit;
-		font-size: 0.68rem;
-		letter-spacing: 0.08rem;
+		font-size: 0.66rem;
+		letter-spacing: 0.04rem;
 		line-height: 1.2;
 		margin: 0;
 		padding: 0;
 		text-decoration: none;
-		text-transform: uppercase;
-		opacity: 0.7;
+		opacity: 0.65;
 
 		&:hover,
 		&:focus {
@@ -323,45 +322,23 @@
 	.privacy-policy-modal-close {
 		@include skel.vendor('appearance', 'none');
 		position: absolute;
-		top: 0;
-		right: 0;
-		width: 4rem;
-		height: 4rem;
+		top: 1rem;
+		right: 1rem;
 		border: 0;
 		background: transparent;
+		color: functions.palette(fg-light);
 		cursor: pointer;
 		padding: 0;
-		text-indent: 4rem;
-		overflow: hidden;
-		white-space: nowrap;
-
-		&:before {
-			@include skel.vendor('transition', 'background-color #{functions.duration(transition)} ease-in-out');
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0.75rem;
-			left: 0.75rem;
-			width: 2.5rem;
-			height: 2.5rem;
-			border-radius: 100%;
-			background-position: center;
-			background-image: mixins.svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{functions.palette(border)}; stroke-width: 1; }</style><line x1="2" y1="2" x2="18" y2="18" /><line x1="18" y1="2" x2="2" y2="18" /></svg>');
-			background-size: 20px 20px;
-			background-repeat: no-repeat;
-		}
+		font-size: 0.95rem;
+		letter-spacing: 0.08rem;
+		line-height: 1;
+		text-transform: uppercase;
+		opacity: 0.7;
 
 		&:hover,
 		&:focus {
-			&:before {
-				background-color: functions.palette(border-bg);
-			}
-		}
-
-		&:active {
-			&:before {
-				background-color: functions.palette(border-bg-alt);
-			}
+			color: functions.palette(fg);
+			opacity: 1;
 		}
 	}
 
@@ -375,17 +352,11 @@
 		}
 
 		.privacy-policy-link {
-			font-size: 0.64rem;
-			letter-spacing: 0.06rem;
+			font-size: 0.62rem;
 		}
 
 		.privacy-policy-modal-close {
-			&:before {
-				top: 0.875rem;
-				left: 0.875rem;
-				width: 2.25rem;
-				height: 2.25rem;
-				background-size: 14px 14px;
-			}
+			top: 0.85rem;
+			right: 0.9rem;
 		}
 	}

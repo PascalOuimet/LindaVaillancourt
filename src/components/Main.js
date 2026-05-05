@@ -55,7 +55,9 @@ const Main = props => {
           className="privacy-policy-modal-close"
           aria-label="Fermer la politique de confidentialit&eacute;"
           onClick={() => setIsPrivacyOpen(false)}
-        />
+        >
+          X
+        </button>
         <h3 id="privacy-policy-title">Politique de confidentialit&eacute;</h3>
         <p>
           Les renseignements transmis par ce formulaire sont utilis&eacute;s uniquement
