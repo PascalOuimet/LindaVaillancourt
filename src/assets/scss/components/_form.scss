@@ -267,6 +267,7 @@
 	.privacy-policy-link {
 		@include skel.vendor('appearance', 'none');
 		background: transparent;
+		box-shadow: none;
 		border: 0;
 		color: functions.palette(fg-light);
 		cursor: pointer;
@@ -321,6 +322,7 @@
 
 	.privacy-policy-modal-close {
 		@include skel.vendor('appearance', 'none');
+		    box-shadow: none;
 		position: absolute;
 		top: 1rem;
 		right: 1rem;
