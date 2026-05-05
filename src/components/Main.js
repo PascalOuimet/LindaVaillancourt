@@ -1,13 +1,27 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Main = props => {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
+
   useEffect(() => {
-    const handleKeyDown = ev => ev.key === 'Escape' ? props.onCloseArticle() : null
+    const handleKeyDown = ev => {
+      if (ev.key !== 'Escape') {
+        return null
+      }
+
+      if (isPrivacyOpen) {
+        setIsPrivacyOpen(false)
+        return null
+      }
+
+      return props.onCloseArticle()
+    }
+
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [props])
+  }, [isPrivacyOpen, props])
 
   const close = (
     <div
@@ -23,6 +37,60 @@ const Main = props => {
   const timeoutClass = props.articleTimeout ? 'timeout' : ''
 
   const getArticleClass = article => `${props.article === article ? 'active' : ''} ${timeoutClass}`
+
+  const privacyPolicyModal = isPrivacyOpen && (
+    <div
+      className="privacy-policy-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="privacy-policy-title"
+      onClick={() => setIsPrivacyOpen(false)}
+    >
+      <div
+        className="privacy-policy-modal-content"
+        onClick={event => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="privacy-policy-modal-close"
+          aria-label="Fermer la politique de confidentialite"
+          onClick={() => setIsPrivacyOpen(false)}
+        >
+          ×
+        </button>
+        <h3 id="privacy-policy-title">Politique de confidentialite</h3>
+        <p>
+          Les renseignements transmis par ce formulaire sont utilises uniquement
+          pour repondre a votre demande de contact ou de rendez-vous.
+        </p>
+        <p>
+          Les informations pouvant etre recueillies sont votre nom, votre numero
+          de telephone, votre adresse courriel, votre message et, si vous le
+          choisissez, votre autorisation a recevoir un message vocal.
+        </p>
+        <p>
+          Ces renseignements sont accessibles seulement aux personnes autorisees
+          dans le cadre de la pratique professionnelle de Linda Vaillancourt et
+          ne sont pas vendus ni communiques a des tiers, sauf si la loi l&apos;exige
+          ou si cela est necessaire au respect des obligations professionnelles.
+        </p>
+        <p>
+          Les renseignements sont conserves de facon confidentielle pour la
+          duree necessaire au traitement de votre demande et a la tenue des
+          dossiers lorsque requis.
+        </p>
+        <p>
+          Vous pouvez demander l&apos;acces, la rectification ou le retrait de vos
+          renseignements personnels, sous reserve des obligations legales et
+          deontologiques applicables.
+        </p>
+        <p>
+          Pour toute question concernant la protection de vos renseignements
+          personnels, vous pouvez communiquer par telephone au 450-807-2449.
+        </p>
+      </div>
+    </div>
+  )
 
   return (
     <div
@@ -137,9 +205,21 @@ const Main = props => {
           <p className="actions">
             <button type="submit" className="special">Envoyer</button>
           </p>
+          <p className="privacy-policy-note">
+            En transmettant ce formulaire, vous acceptez que les renseignements
+            fournis soient utilises pour le suivi de votre demande. Consultez la{' '}
+            <button
+              type="button"
+              className="privacy-policy-link"
+              onClick={() => setIsPrivacyOpen(true)}
+            >
+              politique de confidentialite
+            </button>.
+          </p>
           <input type="hidden" name="subject" value="Pratique autonome" />
           <input type="hidden" name="form-name" value="contact" />
         </form>
+        {privacyPolicyModal}
         <ul className="icons">
           <li><a href="https://www.linkedin.com/in/linda-vaillancourt-343871153" target="_blank" rel="noreferrer" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
         </ul>
