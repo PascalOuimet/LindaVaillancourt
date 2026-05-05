@@ -53,40 +53,38 @@ const Main = props => {
         <button
           type="button"
           className="privacy-policy-modal-close"
-          aria-label="Fermer la politique de confidentialite"
+          aria-label="Fermer la politique de confidentialit&eacute;"
           onClick={() => setIsPrivacyOpen(false)}
-        >
-          ×
-        </button>
-        <h3 id="privacy-policy-title">Politique de confidentialite</h3>
+        />
+        <h3 id="privacy-policy-title">Politique de confidentialit&eacute;</h3>
         <p>
-          Les renseignements transmis par ce formulaire sont utilises uniquement
-          pour repondre a votre demande de contact ou de rendez-vous.
+          Les renseignements transmis par ce formulaire sont utilis&eacute;s uniquement
+          pour r&eacute;pondre &agrave; votre demande de contact ou de rendez-vous.
         </p>
         <p>
-          Les informations pouvant etre recueillies sont votre nom, votre numero
-          de telephone, votre adresse courriel, votre message et, si vous le
-          choisissez, votre autorisation a recevoir un message vocal.
+          Les informations pouvant &ecirc;tre recueillies sont votre nom, votre num&eacute;ro
+          de t&eacute;l&eacute;phone, votre adresse courriel, votre message et, si vous le
+          choisissez, votre autorisation &agrave; recevoir un message vocal.
         </p>
         <p>
-          Ces renseignements sont accessibles seulement aux personnes autorisees
+          Ces renseignements sont accessibles seulement aux personnes autoris&eacute;es
           dans le cadre de la pratique professionnelle de Linda Vaillancourt et
-          ne sont pas vendus ni communiques a des tiers, sauf si la loi l&apos;exige
-          ou si cela est necessaire au respect des obligations professionnelles.
+          ne sont pas vendus ni communiqu&eacute;s &agrave; des tiers, sauf si la loi l&apos;exige
+          ou si cela est n&eacute;cessaire au respect des obligations professionnelles.
         </p>
         <p>
-          Les renseignements sont conserves de facon confidentielle pour la
-          duree necessaire au traitement de votre demande et a la tenue des
+          Les renseignements sont conserv&eacute;s de fa&ccedil;on confidentielle pour la
+          dur&eacute;e n&eacute;cessaire au traitement de votre demande et &agrave; la tenue des
           dossiers lorsque requis.
         </p>
         <p>
-          Vous pouvez demander l&apos;acces, la rectification ou le retrait de vos
-          renseignements personnels, sous reserve des obligations legales et
-          deontologiques applicables.
+          Vous pouvez demander l&apos;acc&egrave;s, la rectification ou le retrait de vos
+          renseignements personnels, sous r&eacute;serve des obligations l&eacute;gales et
+          d&eacute;ontologiques applicables.
         </p>
         <p>
           Pour toute question concernant la protection de vos renseignements
-          personnels, vous pouvez communiquer par telephone au 450-807-2449.
+          personnels, vous pouvez communiquer par t&eacute;l&eacute;phone au 450-807-2449.
         </p>
       </div>
     </div>
@@ -205,19 +203,17 @@ const Main = props => {
           <p className="actions">
             <button type="submit" className="special">Envoyer</button>
           </p>
+          <input type="hidden" name="subject" value="Pratique autonome" />
+          <input type="hidden" name="form-name" value="contact" />
           <p className="privacy-policy-note">
-            En transmettant ce formulaire, vous acceptez que les renseignements
-            fournis soient utilises pour le suivi de votre demande. Consultez la{' '}
             <button
               type="button"
               className="privacy-policy-link"
               onClick={() => setIsPrivacyOpen(true)}
             >
-              politique de confidentialite
-            </button>.
+              Politique de confidentialit&eacute;
+            </button>
           </p>
-          <input type="hidden" name="subject" value="Pratique autonome" />
-          <input type="hidden" name="form-name" value="contact" />
         </form>
         {privacyPolicyModal}
         <ul className="icons">
