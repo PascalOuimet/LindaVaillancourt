@@ -16,7 +16,7 @@ module.exports = {
         background_color: '#1a1f21',
         theme_color: '#1a1f21',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png',
+        icon: 'src/images/PP_YT Logo.jpg',
       },
     },
     {
