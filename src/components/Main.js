@@ -80,13 +80,20 @@ const Main = props => {
           dossiers lorsque requis.
         </p>
         <p>
+          Le formulaire est fourni par Netlify, un prestataire de services qui
+          traite les renseignements afin de transmettre votre message &agrave; Linda
+          Vaillancourt. Ces renseignements peuvent &ecirc;tre trait&eacute;s ou
+          h&eacute;berg&eacute;s &agrave; l&apos;ext&eacute;rieur du Qu&eacute;bec.
+        </p>
+        <p>
           Vous pouvez demander l&apos;acc&egrave;s, la rectification ou le retrait de vos
           renseignements personnels, sous r&eacute;serve des obligations l&eacute;gales et
           d&eacute;ontologiques applicables.
         </p>
         <p>
-          Pour toute question concernant la protection de vos renseignements
-          personnels, vous pouvez communiquer par t&eacute;l&eacute;phone au 450-807-2449.
+          Linda Vaillancourt est responsable de la protection des renseignements
+          personnels. Pour toute question ou demande concernant vos renseignements,
+          vous pouvez communiquer par t&eacute;l&eacute;phone au 450-807-2449.
         </p>
       </div>
     </div>
