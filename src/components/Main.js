@@ -170,7 +170,7 @@ const Main = props => {
         <h2 className="major">À propos</h2>
         <div className="image main">
           <StaticImage
-            src="../images/LindaAbout.jpg"
+            src="../images/Linda_Full.jpg"
             alt="Linda Vaillancourt"
             quality={100}
             width={213}
