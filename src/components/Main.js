@@ -168,7 +168,7 @@ const Main = props => {
         style={{ display: 'none' }}
       >
         <h2 className="major">À propos</h2>
-        <div className="image main">
+        <div className="image main about-portrait">
           <img src="/Linda_Full.jpg" alt="Linda Vaillancourt" loading="lazy" decoding="async" />
         </div>
         <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 20 ans d’expérience en intervention.</p>
