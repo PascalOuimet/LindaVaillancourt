@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
-const successMessage = "J'ai bien recu votre message"
+const successMessage = "J'ai bien reçu votre message"
 
 export const Head = () => {
   const data = useStaticQuery(graphql`
@@ -33,7 +33,7 @@ export const Head = () => {
 const Success = () => (
   <Layout>
     <p>{successMessage}.<br />Je vous contacterai d'ici peu.</p>
-    <Link to="/">Retour a la page d'accueil</Link>
+    <Link to="/">Retour à la page d'accueil</Link>
   </Layout>
 )
 

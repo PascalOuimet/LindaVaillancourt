@@ -93,7 +93,7 @@ const Main = props => {
         <p>
           Linda Vaillancourt est responsable de la protection des renseignements
           personnels. Pour toute question ou demande concernant vos renseignements,
-          vous pouvez communiquer par t&eacute;l&eacute;phone au 450-807-2449.
+          vous pouvez communiquer par t&eacute;l&eacute;phone au <a href="tel:+14508072449">450-807-2449</a>.
         </p>
       </div>
     </div>
@@ -172,7 +172,7 @@ const Main = props => {
           <img src="/Linda_Full.jpg" alt="Linda Vaillancourt" loading="lazy" decoding="async" />
         </div>
         <p>Je suis diplômée en éducation spécialisée et en travail social. Membre en règle de l’Ordre des travailleurs sociaux et thérapeutes conjugaux et familiaux du Québec (OTSTCFQ), j’ai exercé dans plusieurs milieux : organismes communautaires, milieu scolaire, en CLSC et dans mon bureau de pratique privée. Je cumule plus de 20 ans d’expérience en intervention.</p>
-        <p>Mon travail m’a amenée à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formaion à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
+        <p>Mon travail m’a amenée à travailler avec une clientèle très variée. J’ai aussi eu la grande chance d’aller travailler avec les Inuits. Aussi, ma présence en entreprise lors de débriefing a su aider des employés à surmonter certaines difficultés. De ce fait, je poursuis actuellement une formation à l’UDEM en gestion afin d’aller chercher tous les outils nécessaires aux entreprises.</p>
         <p>Durant ce parcours professionnel, j’ai eu le plaisir de pratiquer en tant que coordonnatrice clinique avec une équipe en CLSC. J’ai su m’adapter de façon régulière et mettre à profit mes forces et celles de mon équipe permettant ainsi de grandement diminuer les listes d’attente et d’offrir un meilleur service aux usagers.</p>
         <p>Ma grande soif d’apprendre et ma curiosité intellectuelle font en sorte que je sois très polyvalente et que je vais toujours chercher des formations supplémentaires afin d’améliorer ma pratique.</p>
         <p>Étant une personne chaleureuse, à l’écoute et empathique, je suis disponible pour vous aider à améliorer votre mieux-être et votre cheminement personnel/professionnel.</p>
@@ -185,16 +185,16 @@ const Main = props => {
         style={{ display: 'none' }}
       >
         <h2 className="major">Contact</h2>
-        <p>Mon bureau est situé au 63, rue Saint-Jean-Baptiste bureau #203 à Salaberry-de-Valleyfield. Il vous est possible de me contacter pour un rendez-vous au 450-807-2449.</p>
+        <p>Mon bureau est situé au 63, rue Saint-Jean-Baptiste bureau #203 à Salaberry-de-Valleyfield. Il vous est possible de me contacter pour un rendez-vous au <a href="tel:+14508072449">450-807-2449</a>.</p>
         <p>Les modes de paiement sont par transfert Interac ou en argent (montant exact).</p>
         <form method="post" data-netlify="true" name="contact" action="/success">
           <div className="field half first">
             <label htmlFor="name">Nom</label>
-            <input type="text" name="name" id="name" autoComplete="name" />
+            <input type="text" name="name" id="name" autoComplete="name" required />
           </div>
           <div className="field half">
             <label htmlFor="phone">Téléphone</label>
-            <input type="tel" name="phone" id="phone" autoComplete="tel" />
+            <input type="tel" name="phone" id="phone" autoComplete="tel" required />
           </div>
           <div className="field half">
             <label htmlFor="email">Courriel</label>
@@ -206,7 +206,7 @@ const Main = props => {
           </div>
           <div className="field message">
             <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" rows="4"></textarea>
+            <textarea name="message" id="message" rows="4" required></textarea>
           </div>
           <p className="actions">
             <button type="submit" className="special">Envoyer</button>

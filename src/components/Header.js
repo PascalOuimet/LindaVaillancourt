@@ -19,31 +19,30 @@ const Header = props =>
     <nav>
       <ul>
         <li>
-          <button onClick={() => props.onOpenArticle('intro')}>
+          <a href="#intro">
             Déroulement
-          </button>
+          </a>
         </li>
         <li>
-          <button onClick={() => props.onOpenArticle('work')}>
+          <a href="#work">
             Services
-          </button>
+          </a>
         </li>
         <li>
-          <button onClick={() => props.onOpenArticle('about')}>
+          <a href="#about">
             À propos
-          </button>
+          </a>
         </li>
         <li>
-          <button onClick={() => props.onOpenArticle('contact')}>
+          <a href="#contact">
             Contact
-          </button>
+          </a>
         </li>
       </ul>
     </nav>
   </header>
 
 Header.propTypes = {
-  onOpenArticle: PropTypes.func,
   timeout: PropTypes.bool,
 }
 

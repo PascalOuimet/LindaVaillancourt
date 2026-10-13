@@ -77,30 +77,48 @@ const IndexPage = props => {
   const [loading, setLoading] = useState('is-loading')
   const [wrapperRef, setWrapperRef] = useState(null)
 
-  const handleOpenArticle = article => {
-    setIsArticleVisible(!isArticleVisible)
-    setArticle(article)
+  const handleOpenArticle = useCallback(nextArticle => {
+    setIsArticleVisible(true)
+    setArticle(nextArticle)
 
-    setTimeout(() => setIsTimeout(!isTimeout), 325)
-    setTimeout(() => setArticleTimeout(!articleTimeout), 350)
-  }
+    setTimeout(() => setIsTimeout(true), 325)
+    setTimeout(() => setArticleTimeout(true), 350)
+  }, [])
 
   const handleCloseArticle = useCallback(() => {
-    if (isArticleVisible) {
-      setArticleTimeout(!articleTimeout)
-
-      setTimeout(() => setIsTimeout(!isTimeout), 325)
-
-      setTimeout(() => {
-        setIsArticleVisible(false)
-        setArticle('')
-      }, 350)
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search)
     }
-  }, [articleTimeout, isArticleVisible, isTimeout])
+
+    setArticleTimeout(false)
+    setTimeout(() => setIsTimeout(false), 325)
+
+    setTimeout(() => {
+      setIsArticleVisible(false)
+      setArticle('')
+    }, 350)
+  }, [])
+
+  useEffect(() => {
+    const syncArticleWithHash = () => {
+      const nextArticle = window.location.hash.slice(1)
+      if (['intro', 'work', 'about', 'contact'].includes(nextArticle)) {
+        handleOpenArticle(nextArticle)
+      } else {
+        handleCloseArticle()
+      }
+    }
+
+    if (window.location.hash) {
+      syncArticleWithHash()
+    }
+    window.addEventListener('hashchange', syncArticleWithHash)
+    return () => window.removeEventListener('hashchange', syncArticleWithHash)
+  }, [handleOpenArticle, handleCloseArticle])
 
   useEffect(() => {
     const handleClickOutside = event => {
-      if (wrapperRef && !wrapperRef.contains(event.target) && event.clientX < document.documentElement.offsetWidth) {
+      if (isArticleVisible && wrapperRef && !wrapperRef.contains(event.target) && event.clientX < document.documentElement.offsetWidth) {
         handleCloseArticle()
       }
     }
@@ -121,7 +139,7 @@ const IndexPage = props => {
     <Layout location={props.location}>
       <div className={`body ${loading} ${isArticleVisible ? 'is-article-visible' : ''}`}>
         <div id="wrapper">
-          <Header onOpenArticle={handleOpenArticle} timeout={isTimeout} />
+          <Header timeout={isTimeout} />
           <Main
             isArticleVisible={isArticleVisible}
             timeout={isTimeout}
