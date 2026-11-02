@@ -76,6 +76,20 @@ const IndexPage = props => {
   const [article, setArticle] = useState('')
   const [loading, setLoading] = useState('is-loading')
   const [wrapperRef, setWrapperRef] = useState(null)
+  const [showPaeNotice, setShowPaeNotice] = useState(false)
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('pae-notice-dismissed')) {
+      const timeoutId = setTimeout(() => setShowPaeNotice(true), 1200)
+      return () => clearTimeout(timeoutId)
+    }
+    return undefined
+  }, [])
+
+  const handleClosePaeNotice = () => {
+    setShowPaeNotice(false)
+    window.localStorage.setItem('pae-notice-dismissed', 'true')
+  }
 
   const handleOpenArticle = useCallback(nextArticle => {
     setIsArticleVisible(true)
@@ -150,6 +164,17 @@ const IndexPage = props => {
           />
           <Footer timeout={isTimeout} />
         </div>
+        {showPaeNotice && !isArticleVisible && (
+          <aside className="availability-notice" aria-label="Avis concernant les PAE">
+            <button type="button" className="availability-notice-close" aria-label="Fermer la notification" onClick={handleClosePaeNotice}>
+              ×
+            </button>
+            <p className="availability-notice-eyebrow">Avis important</p>
+            <p className="availability-notice-text">
+              Veuillez prendre note que je n'accepte actuellement aucune nouvelle demande de suivi provenant des programmes d'aide aux employés (PAE). Je vous remercie de votre compréhension.
+            </p>
+          </aside>
+        )}
         <div id="bg"></div>
       </div>
     </Layout>
